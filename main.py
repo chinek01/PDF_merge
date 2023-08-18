@@ -43,11 +43,15 @@ for f in files_name:
 
     pdf.close()
 
-ff = OUT_DIR + '/' + 'all_' + date.today().__str__() + '.pdf'
+if len(files_name) > 0:
+    ff = OUT_DIR + '/' + 'all_' + date.today().__str__() + '.pdf'
 
-print('------------------------------- WRITE OUTPUT FILE: ' + ff + ' -------------------------------')
+    print('------------------------------- WRITE OUTPUT FILE: ' + ff + ' -------------------------------')
 
-# write out file
-with open(ff, 'wb') as output:
-    pdf_writer.write(output)
+    # write out file
+    with open(ff, 'wb') as output:
+        pdf_writer.write(output)
+
+else:
+    print('------------------------------- NO PDFS IN IN_DIR -------------------------------')
 
